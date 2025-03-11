@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () => {
           className="md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
-          ☰
+          <FaBars />
         </button>
       </div>
       {isOpen && (
@@ -51,9 +52,6 @@ const Navbar = () => {
           <a href="#pricing" className="py-2" onClick={() => setIsOpen(false)}>
             Cennik
           </a>
-          <button className="mt-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
-            Zacznij teraz
-          </button>
         </div>
       )}
     </nav>

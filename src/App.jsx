@@ -1,28 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
-import "./index.css";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Demo from "./components/Demo";
+import Testimonials from "./components/Testimonials";
+import Pricing from "./components/Pricing";
+import CTA from "./components/CTA.JSX";
+import Footer from "./components/Footer";
+import RegisterModal from "./components/RegisterModal";
 
 function App() {
+  const [isRegisterOpen, setRegisterOpen] = useState(false);
+
   return (
-    <>
+    <div className="min-h-screen bg-gray-100 text-gray-900">
       <Navbar />
-      <main className="pt-16 container mx-auto">
-        <section className="text-center py-16">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Witamy w TaskFlow AI
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Twoje rozwiązanie do zarządzania projektami z wykorzystaniem
-            sztucznej inteligencji.
-          </p>
-          <div className="mt-8 flex justify-center">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-lg transition">
-              Zacznij teraz
-            </button>
-          </div>
-        </section>
-      </main>
-    </>
+      <div id="hero">
+        <Hero onRegisterClick={() => setRegisterOpen(true)} />
+      </div>
+      <div id="features">
+        <Features />
+      </div>
+      <div id="demo">
+        <Demo />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="pricing">
+        <Pricing />
+      </div>
+      <CTA onRegisterClick={() => setRegisterOpen(true)} />
+      <Footer />
+      <RegisterModal
+        isOpen={isRegisterOpen}
+        onClose={() => setRegisterOpen(false)}
+      />
+    </div>
   );
 }
 
