@@ -1,6 +1,6 @@
 # 🚀 TaskFlow AI – Inteligentne Zarządzanie Zadaniami
 
-![TaskFlow AI](./assets/taskflowai.png)
+![TaskFlow AI](./src/assets/taskflowai.png)
 
 **TaskFlow AI** to nowoczesna aplikacja do zarządzania zadaniami wspierana przez sztuczną inteligencję.  
 Automatycznie organizuje Twoje zadania, analizuje harmonogram i pomaga Ci być bardziej produktywnym.
@@ -20,8 +20,7 @@ Automatycznie organizuje Twoje zadania, analizuje harmonogram i pomaga Ci być b
 
 ## 🚀 **Demo aplikacji**
 
-🔗 **[LIVE DEMO](https://taskflow-ai-demo.com)**  
-📺 **[Wideo demonstracyjne](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
+🔗 **[LIVE DEMO](https://seweryn999.github.io/taskflow-ai/)**  
 
 ---
 
