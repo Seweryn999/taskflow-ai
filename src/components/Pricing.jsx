@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import pricingData from "../data/pricing.json";
 
 const Pricing = () => {
-  const [plans, setPlans] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch("/src/data/pricing.json")
-      .then((response) => response.json())
-      .then((data) => setPlans(data));
-  }, []);
+  const handleClick = (action) => {
+    if (action.startsWith("http")) {
+      window.location.href = action;
+    } else {
+      navigate(action);
+    }
+  };
 
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
@@ -23,7 +25,7 @@ const Pricing = () => {
         </p>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {plans.map((plan, index) => (
+          {pricingData.map((plan, index) => (
             <div
               key={index}
               className={`p-6 border-2 ${plan.color} rounded-lg shadow-lg`}
@@ -38,7 +40,7 @@ const Pricing = () => {
                 ))}
               </ul>
               <button
-                onClick={() => navigate(plan.action)}
+                onClick={() => handleClick(plan.action)}
                 className="mt-6 px-6 py-3 rounded-lg font-semibold transition transform hover:scale-105 bg-white text-gray-900 hover:bg-gray-300"
               >
                 {plan.button}

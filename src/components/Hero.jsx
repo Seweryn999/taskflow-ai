@@ -1,11 +1,11 @@
 import React from "react";
-import { useModal } from "./context/useModal"; // Poprawiona ścieżka
-import Button from "../components/Button"; // Poprawiona ścieżka
-import taskflowAiImg from "../assets/taskflowai.png"; // Import obrazu
+import { useModal } from "./context/useModal";
+import Button from "../components/Button";
+import taskflowAiImg from "../assets/taskflowai.png";
 
 const Hero = () => {
-  const modal = useModal(); // Upewniamy się, że modal istnieje
-  const setRegisterOpen = modal?.setRegisterOpen ?? (() => {}); // Unikamy błędów
+  const modal = useModal();
+  const setRegisterOpen = modal?.setRegisterOpen ?? (() => {});
 
   return (
     <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-20 px-6 bg-gray-900 text-white">

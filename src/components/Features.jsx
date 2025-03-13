@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import featuresData from "../data/features.json";
 import { FaTasks, FaClock, FaChartLine, FaBrain } from "react-icons/fa";
 
 const iconComponents = {
@@ -9,14 +10,6 @@ const iconComponents = {
 };
 
 const Features = () => {
-  const [features, setFeatures] = useState([]);
-
-  useEffect(() => {
-    fetch("/src/data/features.json")
-      .then((response) => response.json())
-      .then((data) => setFeatures(data));
-  }, []);
-
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 text-center">
@@ -27,7 +20,7 @@ const Features = () => {
           Odkryj inteligentne funkcje, które ułatwią Ci życie.
         </p>
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {features.map((feature, index) => (
+          {featuresData.map((feature, index) => (
             <div key={index} className="p-6 bg-gray-800 rounded-lg shadow-lg">
               <div className="mb-4">{iconComponents[feature.icon]}</div>
               <h3 className="text-xl font-semibold">{feature.title}</h3>
