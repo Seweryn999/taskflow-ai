@@ -1,42 +1,24 @@
-import React from "react";
-
-const plans = [
-  {
-    name: "Darmowy",
-    price: "0 zł / miesiąc",
-    features: ["Podstawowe funkcje", "Zarządzanie zadaniami", "1 użytkownik"],
-    button: "Zacznij za darmo",
-    color: "border-gray-400 bg-gray-200 text-gray-900",
-  },
-  {
-    name: "Pro",
-    price: "39 zł / miesiąc",
-    features: ["Wszystkie funkcje Darmowe", "Integracja AI", "5 użytkowników"],
-    button: "Wybierz Pro",
-    color: "border-blue-500 bg-blue-500 text-white",
-  },
-  {
-    name: "Enterprise",
-    price: "99 zł / miesiąc",
-    features: [
-      "Wszystkie funkcje Pro",
-      "Zaawansowana analiza",
-      "Nieograniczona liczba użytkowników",
-    ],
-    button: "Skontaktuj się",
-    color: "border-yellow-500 bg-yellow-500 text-white",
-  },
-];
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
+  const [plans, setPlans] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/src/data/pricing.json")
+      .then((response) => response.json())
+      .then((data) => setPlans(data));
+  }, []);
+
   return (
-    <section className="py-20 bg-gray-100 dark:bg-gray-900">
+    <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white">
-          Wybierz najlepszy <span className="text-blue-500">plan</span> dla
+        <h2 className="text-4xl font-extrabold">
+          Wybierz najlepszy <span className="text-yellow-300">plan</span> dla
           siebie
         </h2>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        <p className="mt-4 text-lg opacity-90">
           Elastyczne opcje dla freelancerów, zespołów i dużych firm.
         </p>
 
@@ -48,14 +30,17 @@ const Pricing = () => {
             >
               <h3 className="text-2xl font-bold">{plan.name}</h3>
               <p className="text-xl font-semibold mt-2">{plan.price}</p>
-              <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="mt-4 space-y-2">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center justify-center">
                     ✅ {feature}
                   </li>
                 ))}
               </ul>
-              <button className="mt-6 px-6 py-3 rounded-lg font-semibold transition transform hover:scale-105">
+              <button
+                onClick={() => navigate(plan.action)}
+                className="mt-6 px-6 py-3 rounded-lg font-semibold transition transform hover:scale-105 bg-white text-gray-900 hover:bg-gray-300"
+              >
                 {plan.button}
               </button>
             </div>

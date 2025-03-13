@@ -1,31 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-const testimonials = [
-  {
-    name: "Anna Kowalska",
-    position: "Project Manager",
-    review:
-      "TaskFlow AI odmieniło moje zarządzanie projektami. Automatyczne przypomnienia i AI pomagają mi lepiej planować pracę!",
-    rating: 5,
-  },
-  {
-    name: "Michał Nowak",
-    position: "Freelancer",
-    review:
-      "Dzięki TaskFlow AI mogę lepiej organizować zadania i oszczędzam mnóstwo czasu na planowaniu.",
-    rating: 5,
-  },
-  {
-    name: "Karolina Zielińska",
-    position: "HR Specialist",
-    review:
-      "Świetne narzędzie do zarządzania zespołem! Integracja z kalendarzem to prawdziwy game-changer.",
-    rating: 5,
-  },
-];
-
 const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    fetch("/src/data/testimonials.json")
+      .then((response) => response.json())
+      .then((data) => setTestimonials(data));
+  }, []);
+
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6 text-center">

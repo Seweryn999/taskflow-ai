@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "FaTasks",
+    "title": "Automatyczne Zarządzanie Zadaniami",
+    "description": "TaskFlow AI priorytetyzuje i organizuje Twoje zadania automatycznie."
+  },
+  {
+    "icon": "FaClock",
+    "title": "Optymalizacja Czasu",
+    "description": "AI analizuje Twój harmonogram i proponuje najlepsze terminy wykonania."
+  },
+  {
+    "icon": "FaChartLine",
+    "title": "Śledzenie Postępów",
+    "description": "Zaawansowane statystyki i wizualizacje pomagają lepiej zarządzać pracą."
+  },
+  {
+    "icon": "FaBrain",
+    "title": "Integracja z AI",
+    "description": "TaskFlow AI uczy się Twoich nawyków i dostosowuje się do Twojego stylu pracy."
+  }
+]

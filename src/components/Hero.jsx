@@ -1,16 +1,13 @@
-/* eslint-disable no-unused-vars */
-
 import React from "react";
-import { motion } from "framer-motion";
+import { useModal } from "./context/useModal"; 
+import Button from "./Button"; 
+import taskflowAiImg from "../assets/taskflowai.png"; 
 
-const Hero = ({ onRegisterClick }) => {
+const Hero = () => {
+  const { setRegisterOpen } = useModal(); 
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-20 px-6 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white"
-    >
+    <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-20 px-6 bg-gray-900 text-white">
       <div className="md:w-1/2">
         <h1 className="text-5xl font-extrabold leading-tight">
           Zwiększ swoją produktywność z{" "}
@@ -21,44 +18,36 @@ const Hero = ({ onRegisterClick }) => {
           się do Twojego harmonogramu.
         </p>
 
-       
-        <div className="mt-6 flex justify-center md:justify-start">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            onClick={() =>
-              document
-                .getElementById("pricing")
-                .scrollIntoView({ behavior: "smooth" })
-            }
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg text-lg font-semibold shadow-lg transition"
+        <div className="mt-6 flex justify-center md:justify-start gap-4">
+          <Button
+            onClick={() => {
+              const pricingSection = document.getElementById("pricing");
+              if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-white text-blue-600"
           >
             Zobacz cennik
-          </motion.button>
+          </Button>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            onClick={onRegisterClick}
-            className="ml-4 bg-yellow-300 text-blue-900 px-6 py-3 rounded-lg text-lg font-semibold transition transform"
+          <Button
+            onClick={() => setRegisterOpen(true)}
+            className="bg-yellow-300 text-blue-900"
           >
             Zarejestruj się
-          </motion.button>
+          </Button>
         </div>
       </div>
 
-      
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="md:w-1/2 mt-10 md:mt-0 flex justify-center"
-      >
+      <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
         <img
-          src="/src/public/taskflowai.png"
+          src={taskflowAiImg}
           alt="TaskFlow AI"
           className="w-full max-w-lg drop-shadow-lg"
         />
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

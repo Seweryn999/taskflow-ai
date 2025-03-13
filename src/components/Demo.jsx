@@ -1,14 +1,21 @@
 import React from "react";
 
 const Demo = () => {
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="py-20 bg-gray-100 dark:bg-gray-900">
+    <section className="py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white">
-          Zobacz <span className="text-blue-500">TaskFlow AI</span> w akcji
+        <h2 className="text-4xl font-extrabold">
+          Zobacz <span className="text-yellow-300">TaskFlow AI</span> w akcji
         </h2>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Zobacz, jak TaskFlow AI może zautomatyzować Twoją pracę i zwiększyć
+        <p className="mt-4 text-lg opacity-90">
+          Sprawdź, jak TaskFlow AI może zautomatyzować Twoją pracę i zwiększyć
           produktywność.
         </p>
 
@@ -24,7 +31,10 @@ const Demo = () => {
         </div>
 
         <div className="mt-8">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg shadow-lg transition">
+          <button
+            onClick={scrollToPricing}
+            className="bg-yellow-300 hover:bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg text-lg font-semibold shadow-lg transition transform hover:scale-105"
+          >
             Wypróbuj teraz
           </button>
         </div>
