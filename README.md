@@ -20,7 +20,7 @@ Automatycznie organizuje Twoje zadania, analizuje harmonogram i pomaga Ci być b
 
 ## 🚀 **Demo aplikacji**
 
-🔗 **[LIVE DEMO]([https://seweryn999.github.io/taskflow-ai/])**  
+🔗 **[LIVE DEMO](https://seweryn999.github.io/taskflow-ai/)**  
 
 ---
 
