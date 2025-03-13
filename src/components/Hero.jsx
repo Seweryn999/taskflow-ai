@@ -1,5 +1,5 @@
 import React from "react";
-import { useModal } from "../context/useModal"; // Poprawiona ścieżka
+import { useModal } from "./context/useModal"; // Poprawiona ścieżka
 import Button from "../components/Button"; // Poprawiona ścieżka
 import taskflowAiImg from "../assets/taskflowai.png"; // Import obrazu
 
