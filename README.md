@@ -1,12 +1,64 @@
-# React + Vite
+# 🚀 TaskFlow AI – Inteligentne Zarządzanie Zadaniami
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![TaskFlow AI](./assets/taskflowai.png)
 
-Currently, two official plugins are available:
+**TaskFlow AI** to nowoczesna aplikacja do zarządzania zadaniami wspierana przez sztuczną inteligencję.  
+Automatycznie organizuje Twoje zadania, analizuje harmonogram i pomaga Ci być bardziej produktywnym.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 **Funkcje**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ **Inteligentne zarządzanie zadaniami** – AI analizuje Twoje obowiązki i priorytetyzuje je za Ciebie  
+✅ **Integracja z kalendarzem** – Synchronizuj zadania z Google Calendar  
+✅ **Raporty efektywności** – Wykresy i analiza produktywności  
+✅ **Responsywna aplikacja** – Działa na komputerze, tablecie i telefonie  
+✅ **Płatności subskrypcyjne** – Integracja z Stripe i PayPal  
+✅ **Tryb ciemny** – Automatyczne dostosowanie do preferencji użytkownika
+
+---
+
+## 🚀 **Demo aplikacji**
+
+🔗 **[LIVE DEMO](https://taskflow-ai-demo.com)**  
+📺 **[Wideo demonstracyjne](https://www.youtube.com/watch?v=dQw4w9WgXcQ)**
+
+---
+
+## 🛠 **Technologie**
+
+### **Frontend**
+
+- ⚛ **React.js + Vite** – Szybki i responsywny interfejs
+- 🎨 **TailwindCSS** – Nowoczesne stylowanie
+- 💨 **Framer Motion** – Animacje
+- 🌍 **React Router** – Nawigacja
+- 🔥 **Firebase** (opcjonalnie) – Autoryzacja użytkowników
+
+### **Backend**
+
+- 🟢 **Node.js + Express.js** – Szybki backend API
+- 🐘 **PostgreSQL / MongoDB** – Baza danych użytkowników i zadań
+- 🔑 **JWT / OAuth2** – Bezpieczna autoryzacja
+
+### **AI & Automatyzacja**
+
+- 🤖 **OpenAI API** – Analiza zadań przez sztuczną inteligencję
+- 📊 **TensorFlow / scikit-learn** – Analiza efektywności użytkownika
+
+### **Płatności & Bezpieczeństwo**
+
+- 💳 **Stripe API / PayPal API** – Subskrypcje płatności
+- 🔒 **bcrypt.js** – Szyfrowanie haseł
+- 🏗 **Rate-limiting & CORS** – Ochrona przed atakami
+
+---
+
+## 📥 **Instalacja**
+
+### **1️⃣ Klonowanie repozytorium**
+
+```bash
+git clone https://github.com/twoj-user/taskflow-ai.git
+cd taskflow-ai
+```
