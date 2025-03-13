@@ -1,16 +1,20 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { ModalProvider } from "./components/context/ModalContext"; // Upewnij się, że ścieżka jest poprawna!
 import Home from "./pages/Home";
 import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Routes>
-    </Router>
+    <ModalProvider>
+      {" "}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </Router>
+    </ModalProvider>
   );
 }
 

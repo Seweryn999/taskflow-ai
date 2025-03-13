@@ -1,10 +1,11 @@
 import React from "react";
-import { useModal } from "./context/useModal"; 
-import Button from "./Button"; 
-import taskflowAiImg from "../assets/taskflowai.png"; 
+import { useModal } from "../context/useModal"; // Poprawiona ścieżka
+import Button from "../components/Button"; // Poprawiona ścieżka
+import taskflowAiImg from "../assets/taskflowai.png"; // Import obrazu
 
 const Hero = () => {
-  const { setRegisterOpen } = useModal(); 
+  const modal = useModal(); // Upewniamy się, że modal istnieje
+  const setRegisterOpen = modal?.setRegisterOpen ?? (() => {}); // Unikamy błędów
 
   return (
     <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-20 px-6 bg-gray-900 text-white">
@@ -22,9 +23,7 @@ const Hero = () => {
           <Button
             onClick={() => {
               const pricingSection = document.getElementById("pricing");
-              if (pricingSection) {
-                pricingSection.scrollIntoView({ behavior: "smooth" });
-              }
+              pricingSection?.scrollIntoView({ behavior: "smooth" });
             }}
             className="bg-white text-blue-600"
           >
